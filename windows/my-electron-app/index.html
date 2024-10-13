@@ -1,1 +1,32 @@
-Hello, Electron!
+<html>
+  <body>
+    <h3>Hello, Electron!</h3>
+    <p>Hello, Electron!</p>
+    <p>Hello, Electron!</p>
+    <p>Hello, Electron!</p>
+    <div id="backend-message">
+        <h1>Blah, Blah!</h1>
+    </div>
+    <script>
+      alert("Hello, Electron!");
+    </script>
+    <script>
+      async function getData() {
+        const url = "http://127.0.0.1:3000/";
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+          }
+
+          const json = await response.json();
+          console.log(json);
+          document.getElementById('backend-message').innerText = json.message;
+        } catch (error) {
+          console.error(error.message);
+        }
+      }
+    getData();
+    </script>
+  </body>
+</html>
