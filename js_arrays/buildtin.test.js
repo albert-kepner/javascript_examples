@@ -12,17 +12,17 @@ test('splice whole array', () => {
   expect(arr).toEqual([]);
 });
 
-function spliceACopy(arr) {
+function sliceACopy(arr) {
   result = arr.slice();
   console.log(`in spliceACopy result: ${result}`);
   console.log(`in spliceACopy arr: ${arr}`);
   return result;
 }
 
-test('spliceACopy does not mutate array', () => {
+test('sliceACopy does not mutate array', () => {
   const arr = [1, 2, 3, 4, 5];
   const arr_ref = arr;
-  const copy = spliceACopy(arr);
+  const copy = sliceACopy(arr);
   expect(copy).toEqual([1, 2, 3, 4, 5]);
   expect(copy).not.toBe(arr);
   expect(arr).toBe(arr_ref);
