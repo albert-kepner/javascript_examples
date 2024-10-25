@@ -31,8 +31,9 @@ test('spliceACopy does not mutate array', () => {
 
 test('toSpliced does not mutate array', () => {
   const arr = [1, 2, 3, 4, 5];
-  const removed = toSpliced(arr, 2, 2);
-  expect(removed).toEqual([3, 4]);
+  const remaining = arr.toSpliced( 2, 2);
+  expect(remaining).toEqual([1, 2, 5]);
+  console.log(`in toSpliced remaining: ${remaining}`);
   expect(arr).toEqual([1, 2, 3, 4, 5]);
 });
 
