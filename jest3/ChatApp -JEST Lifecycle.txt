@@ -1,0 +1,89 @@
+ChatApp Conversation 5/11/2024 20:59:26
+========================================
+
+bot: Hello, how can I help?
+
+user: In testing with Jest how do I specify initialization that runs once per test case and/or once per test file?
+
+bot: In Jest, you can specify initialization that runs once per test case and/or once per test file using the following methods:
+
+### Initialization that runs once per test case
+
+To run initialization code before each test case, you can use the `beforeEach` function. Similarly, you can clean up after each test case using the `afterEach` function.
+
+```javascript
+beforeEach(() => {
+  // Code to run before each test case
+});
+
+afterEach(() => {
+  // Code to run after each test case
+});
+```
+
+### Initialization that runs once per test file
+
+To run initialization code once before all test cases in a test file, you can use the `beforeAll` function. Similarly, you can clean up after all test cases have run using the `afterAll` function.
+
+```javascript
+beforeAll(() => {
+  // Code to run once before all test cases in the file
+});
+
+afterAll(() => {
+  // Code to run once after all test cases in the file
+});
+```
+
+### Example
+
+Here’s an example of how you can use these functions in a Jest test file:
+
+```javascript
+describe('My Test Suite', () => {
+  beforeAll(() => {
+    console.log('Run once before all tests');
+    // Initialization code that runs once before all tests
+  });
+
+  beforeEach(() => {
+    console.log('Run before each test');
+    // Initialization code that runs before each test
+  });
+
+  afterEach(() => {
+    console.log('Run after each test');
+    // Cleanup code that runs after each test
+  });
+
+  afterAll(() => {
+    console.log('Run once after all tests');
+    // Cleanup code that runs once after all tests
+  });
+
+  test('Test case 1', () => {
+    console.log('Running test case 1');
+    // Your test code here
+  });
+
+  test('Test case 2', () => {
+    console.log('Running test case 2');
+    // Your test code here
+  });
+});
+```
+
+In this example, the output will be:
+
+```
+Run once before all tests
+Run before each test
+Running test case 1
+Run after each test
+Run before each test
+Running test case 2
+Run after each test
+Run once after all tests
+```
+
+This ensures that the initialization and cleanup code runs at the appropriate times in the testing lifecycle.
