@@ -41,4 +41,8 @@ test ('f3', () => {
     values = f3(n);
     console.log(`values = ${values}`);
     expect(values).toEqual([10,8,6,4,2,1,3,5,7,9]);
+    n = 15
+    values = f3(n);
+    console.log(`values = ${values}`);
+    expect(values).toEqual([14,12,10,8,6,4,2,1,3,5,7,9,11,13,15]);
 });
