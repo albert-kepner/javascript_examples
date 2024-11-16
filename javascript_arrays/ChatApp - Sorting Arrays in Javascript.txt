@@ -1,0 +1,50 @@
+ChatApp Conversation 13/11/2024 13:59:43
+=========================================
+
+bot: Hello Al, how can I help?
+
+user: Please give an example of how to sort a javascript array of objects ordered by one of the object keys.
+
+bot: Certainly! Sorting an array of objects in JavaScript can be done using the `sort` method. Here’s an example where we have an array of objects, each representing a person, and we want to sort this array by the `age` property:
+
+```javascript
+// Example array of objects
+const people = [
+  { name: 'John', age: 30 },
+  { name: 'Jane', age: 25 },
+  { name: 'Alice', age: 28 },
+  { name: 'Bob', age: 22 }
+];
+
+// Sorting the array by the 'age' property
+people.sort((a, b) => a.age - b.age);
+
+console.log(people);
+```
+
+In this example, `people` is an array of objects where each object has `name` and `age` properties. The `sort` method is used with a comparison function `(a, b) => a.age - b.age` to sort the array in ascending order based on the `age` property.
+
+The comparison function works as follows:
+- If `a.age` is less than `b.age`, the function returns a negative number, meaning `a` will be sorted before `b`.
+- If `a.age` is greater than `b.age`, the function returns a positive number, meaning `a` will be sorted after `b`.
+- If `a.age` is equal to `b.age`, the function returns 0, meaning their order relative to each other remains unchanged.
+
+After running the above code, the `people` array will be sorted by age in ascending order:
+```javascript
+[
+  { name: 'Bob', age: 22 },
+  { name: 'Jane', age: 25 },
+  { name: 'Alice', age: 28 },
+  { name: 'John', age: 30 }
+]
+```
+
+If you want to sort the array in descending order, you can simply reverse the comparison:
+
+```javascript
+people.sort((a, b) => b.age - a.age);
+
+console.log(people);
+```
+
+This will sort the array with the oldest person first.
