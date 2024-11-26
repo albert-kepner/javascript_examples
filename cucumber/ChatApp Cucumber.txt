@@ -1,0 +1,14 @@
+ChatApp Conversation 25/11/2024 9:47:30
+========================================
+
+bot: Hello Al, how can I help?
+
+user: Please tell me about Cucumber as a UI testing Framework. Also what language was used to implement this software?
+
+bot: Cucumber is a popular open-source testing framework used for behavior-driven development (BDD). It allows software development teams to describe how software should behave in a human-readable format, using a language called Gherkin. This approach fosters collaboration between technical and non-technical team members, ensuring a shared understanding of the requirements and expected outcomes.
+
+Cucumber works by allowing teams to write test scenarios in plain English, which are then linked to automated tests. These scenarios are written in feature files using the Gherkin syntax, which follows a Given-When-Then structure to describe the preconditions, actions, and expected results.
+
+Cucumber is implemented in several programming languages, with the most popular and original implementation being in Ruby. However, there are also implementations available for other languages, including Java (Cucumber-JVM), JavaScript (Cucumber.js), and others, allowing teams to choose the one that best fits their technology stack.
+
+Overall, Cucumber helps bridge the gap between business stakeholders and developers, facilitating a more collaborative and efficient software development process.

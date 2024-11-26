@@ -1,0 +1,114 @@
+ChatApp Conversation 26/11/2024 8:05:23
+========================================
+
+bot: Hello Al, how can I help?
+
+user: Please show me how to set up a small multi page web app using create-react-app and react router.
+
+bot: To set up a small multi-page web app using `create-react-app` and `react-router`, you'll need to follow these steps:
+
+### Step 1: Set Up Your React App
+
+1. **Install Node.js and npm**: Ensure you have Node.js and npm installed on your machine. You can download them from [nodejs.org](https://nodejs.org/).
+
+2. **Create a New React App**: Use the `create-react-app` command to scaffold a new React application.
+   ```bash
+   npx create-react-app my-multi-page-app
+   ```
+
+3. **Navigate to Your App Directory**:
+   ```bash
+   cd my-multi-page-app
+   ```
+
+### Step 2: Install React Router
+
+4. **Install React Router**: Add `react-router-dom` to your project for handling routing.
+   ```bash
+   npm install react-router-dom
+   ```
+
+### Step 3: Set Up React Router
+
+5. **Configure Your Routes**:
+   - Open the `src` directory and create a folder named `pages`.
+   - Inside the `pages` folder, create the following files: `Home.js`, `About.js`, and `Contact.js`.
+
+6. **Create Page Components**:
+
+   - **Home.js**:
+     ```jsx
+     import React from 'react';
+
+     const Home = () => {
+       return <h2>Home Page</h2>;
+     };
+
+     export default Home;
+     ```
+
+   - **About.js**:
+     ```jsx
+     import React from 'react';
+
+     const About = () => {
+       return <h2>About Page</h2>;
+     };
+
+     export default About;
+     ```
+
+   - **Contact.js**:
+     ```jsx
+     import React from 'react';
+
+     const Contact = () => {
+       return <h2>Contact Page</h2>;
+     };
+
+     export default Contact;
+     ```
+
+7. **Set Up Routing in App.js**:
+   - Open `src/App.js` and modify it to include `react-router-dom` routes.
+
+   ```jsx
+   import React from 'react';
+   import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+   import Home from './pages/Home';
+   import About from './pages/About';
+   import Contact from './pages/Contact';
+
+   function App() {
+     return (
+       <Router>
+         <div>
+           <nav>
+             <ul>
+               <li><Link to="/">Home</Link></li>
+               <li><Link to="/about">About</Link></li>
+               <li><Link to="/contact">Contact</Link></li>
+             </ul>
+           </nav>
+
+           <Switch>
+             <Route path="/" exact component={Home} />
+             <Route path="/about" component={About} />
+             <Route path="/contact" component={Contact} />
+           </Switch>
+         </div>
+       </Router>
+     );
+   }
+
+   export default App;
+   ```
+
+### Step 4: Start Your Application
+
+8. **Run Your React App**: Start your development server to see your multi-page app in action.
+   ```bash
+   npm start
+   ```
+
+Your app should now be running on `http://localhost:3000`, and you can navigate between the Home, About, and Contact pages using the links provided by `react-router-dom`. This setup gives you a basic multi-page web app structure using React Router.
